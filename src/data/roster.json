@@ -1,0 +1,11 @@
+{
+  "team_name": "FNTZ Champions",
+  "league_id": "sample_league",
+  "user_id": "sample_user",
+  "QB": ["Josh Allen", "Tua Tagovailoa"],
+  "RB": ["Breece Hall", "Jonathan Taylor", "Aaron Jones"],
+  "WR": ["Ja'Marr Chase", "Jaylen Waddle", "DK Metcalf"],
+  "TE": ["Travis Kelce", "Kyle Pitts"],
+  "K": ["Justin Tucker"],
+  "DEF": ["San Francisco 49ers"]
+} 

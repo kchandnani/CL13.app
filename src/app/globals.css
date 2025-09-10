@@ -1,0 +1,315 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* === FNTZ AI Professional Design System === */
+    
+    /* Primary Brand Colors */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    
+    /* FNTZ Brand Identity */
+    --primary: 24.6 95% 53.1%;           /* Orange */
+    --primary-foreground: 26 83% 14%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    
+    /* Semantic Colors - Professional Sports App */
+    --success: 142.1 76.2% 36.3%;       /* Green - wins, good trades */
+    --success-foreground: 210 40% 98%;
+    --warning: 47.9 95.8% 53.1%;        /* Yellow - caution, medium risk */
+    --warning-foreground: 26 83% 14%;
+    --danger: 0 84.2% 60.2%;            /* Red - injuries, bad trades */
+    --danger-foreground: 210 40% 98%;
+    --info: 221.2 83.2% 53.3%;          /* Blue - information, analytics */
+    --info-foreground: 210 40% 98%;
+    
+    /* Neutral Grays - Refined Scale */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 24.6 95% 53.1%;
+    
+    /* Surface Colors - Elevated Elements */
+    --surface-1: 217.2 32.6% 19.5%;     /* Slightly elevated */
+    --surface-2: 217.2 32.6% 21.5%;     /* More elevated */
+    --surface-3: 217.2 32.6% 23.5%;     /* Highest elevation */
+    
+    /* Interactive States */
+    --hover-overlay: 210 40% 98% / 0.05;
+    --active-overlay: 210 40% 98% / 0.1;
+    --focus-ring: 24.6 95% 53.1% / 0.5;
+    
+    /* Fantasy-Specific Colors */
+    --player-qb: 147 100% 67%;           /* Bright green for QB */
+    --player-rb: 264 83% 70%;           /* Purple for RB */
+    --player-wr: 38 92% 50%;            /* Orange for WR */
+    --player-te: 193 95% 68%;           /* Cyan for TE */
+    --player-k: 285 85% 70%;            /* Pink for K */
+    --player-def: 220 70% 50%;          /* Blue for DEF */
+    
+    /* Chart Colors - Data Visualization */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    
+    /* Layout & Spacing */
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    
+    /* Typography Scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    
+    /* Shadows & Elevation */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Improved Focus Management */
+  *:focus {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+  
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* === FNTZ AI Component System === */
+  
+  /* Brand Elements */
+  .fntz-gradient {
+    @apply bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-500;
+  }
+  
+  .fntz-gradient-subtle {
+    @apply bg-gradient-to-r from-orange-500/10 via-orange-400/10 to-yellow-500/10;
+  }
+  
+  .fntz-text-gradient {
+    @apply bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent;
+  }
+  
+  /* Card System - Consistent Elevation */
+  .fntz-card {
+    @apply bg-card border border-border/50 rounded-lg shadow-sm;
+  }
+  
+  .fntz-card-elevated {
+    @apply bg-card border border-border/30 rounded-lg shadow-md;
+  }
+  
+  .fntz-card-interactive {
+    @apply fntz-card transition-all duration-200 hover:shadow-md hover:border-border/80;
+  }
+  
+  .fntz-card-glass {
+    @apply bg-card/50 backdrop-blur-sm border border-border/30 rounded-lg;
+  }
+  
+  /* Surface Hierarchy */
+  .fntz-surface-1 {
+    @apply bg-[hsl(var(--surface-1))] rounded-lg;
+  }
+  
+  .fntz-surface-2 {
+    @apply bg-[hsl(var(--surface-2))] rounded-lg;
+  }
+  
+  .fntz-surface-3 {
+    @apply bg-[hsl(var(--surface-3))] rounded-lg;
+  }
+  
+  /* Interactive Elements */
+  .fntz-interactive {
+    @apply transition-all duration-200 hover:bg-[hsl(var(--hover-overlay))] active:bg-[hsl(var(--active-overlay))];
+  }
+  
+  .fntz-clickable {
+    @apply fntz-interactive cursor-pointer rounded-md p-2;
+  }
+  
+  .fntz-hover-lift {
+    @apply transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg;
+  }
+  
+  /* Status & Semantic Colors */
+  .fntz-success {
+    @apply bg-[hsl(var(--success))]/10 text-[hsl(var(--success))] border-[hsl(var(--success))]/20;
+  }
+  
+  .fntz-warning {
+    @apply bg-[hsl(var(--warning))]/10 text-[hsl(var(--warning))] border-[hsl(var(--warning))]/20;
+  }
+  
+  .fntz-danger {
+    @apply bg-[hsl(var(--danger))]/10 text-[hsl(var(--danger))] border-[hsl(var(--danger))]/20;
+  }
+  
+  .fntz-info {
+    @apply bg-[hsl(var(--info))]/10 text-[hsl(var(--info))] border-[hsl(var(--info))]/20;
+  }
+  
+  /* Player Position Colors */
+  .fntz-player-qb {
+    @apply bg-[hsl(var(--player-qb))]/10 text-[hsl(var(--player-qb))] border-[hsl(var(--player-qb))]/20;
+  }
+  
+  .fntz-player-rb {
+    @apply bg-[hsl(var(--player-rb))]/10 text-[hsl(var(--player-rb))] border-[hsl(var(--player-rb))]/20;
+  }
+  
+  .fntz-player-wr {
+    @apply bg-[hsl(var(--player-wr))]/10 text-[hsl(var(--player-wr))] border-[hsl(var(--player-wr))]/20;
+  }
+  
+  .fntz-player-te {
+    @apply bg-[hsl(var(--player-te))]/10 text-[hsl(var(--player-te))] border-[hsl(var(--player-te))]/20;
+  }
+  
+  .fntz-player-k {
+    @apply bg-[hsl(var(--player-k))]/10 text-[hsl(var(--player-k))] border-[hsl(var(--player-k))]/20;
+  }
+  
+  .fntz-player-def {
+    @apply bg-[hsl(var(--player-def))]/10 text-[hsl(var(--player-def))] border-[hsl(var(--player-def))]/20;
+  }
+  
+  /* Typography System */
+  .fntz-heading-1 {
+    @apply text-3xl font-bold tracking-tight text-foreground;
+  }
+  
+  .fntz-heading-2 {
+    @apply text-2xl font-semibold tracking-tight text-foreground;
+  }
+  
+  .fntz-heading-3 {
+    @apply text-xl font-semibold text-foreground;
+  }
+  
+  .fntz-heading-4 {
+    @apply text-lg font-semibold text-foreground;
+  }
+  
+  .fntz-body {
+    @apply text-base text-foreground leading-relaxed;
+  }
+  
+  .fntz-body-small {
+    @apply text-sm text-muted-foreground;
+  }
+  
+  .fntz-caption {
+    @apply text-xs text-muted-foreground uppercase tracking-wide;
+  }
+  
+  /* Layout Utilities */
+  .fntz-container {
+    @apply container max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .fntz-section {
+    @apply py-12 lg:py-16;
+  }
+  
+  .fntz-spacing-sm {
+    @apply space-y-4;
+  }
+  
+  .fntz-spacing-md {
+    @apply space-y-6;
+  }
+  
+  .fntz-spacing-lg {
+    @apply space-y-8;
+  }
+  
+  /* Data Visualization */
+  .fntz-metric-card {
+    @apply fntz-card p-6 text-center;
+  }
+  
+  .fntz-metric-value {
+    @apply text-2xl font-bold text-foreground;
+  }
+  
+  .fntz-metric-label {
+    @apply text-sm text-muted-foreground;
+  }
+  
+  /* Loading & Empty States */
+  .fntz-loading {
+    @apply animate-pulse bg-muted rounded;
+  }
+  
+  .fntz-empty-state {
+    @apply text-center py-12 text-muted-foreground;
+  }
+  
+  /* Mobile Optimizations */
+  @media (max-width: 768px) {
+    .fntz-card {
+      @apply rounded-md;
+    }
+    
+    .fntz-container {
+      @apply px-4;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+} 
